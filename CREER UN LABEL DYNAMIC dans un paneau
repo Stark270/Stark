@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace addLabel
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        int INCREMENT_COMPTAGE=0;
+        int Top=8;
+        int left = 20;
+
+
+        private void GetMessg(string Message) {
+
+                    INCREMENT_COMPTAGE++;
+
+                    for (int i = 0; i < INCREMENT_COMPTAGE; i++)
+            {
+
+                Label STARKlABEL = new Label();
+                panel1.Controls.Add(STARKlABEL);
+                STARKlABEL.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+                STARKlABEL.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                STARKlABEL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+                STARKlABEL.Location = new System.Drawing.Point(left, Top);
+                STARKlABEL.Name = "label1";
+                STARKlABEL.Size = new System.Drawing.Size(186, 37);
+                STARKlABEL.TabIndex = 0;
+                STARKlABEL.Text = Message;
+                STARKlABEL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                Top += 50;
+                INCREMENT_COMPTAGE--;
+            }
+
+           
+            
+        
+        
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GetMessg(textBox1.Text);
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+    }
+}
